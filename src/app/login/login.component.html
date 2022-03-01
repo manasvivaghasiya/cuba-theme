@@ -1,0 +1,109 @@
+
+    <!-- ----------background-image---------- -->
+    <!-- <div>
+        <div  style="background-size: cover;
+        display: center center;
+        display: block;"> 
+         <img class="bg-image-cover bg-center " src="assets/login_bg.jpg" alt="login">
+        </div>
+    </div> -->
+    
+        <!-- ---------------login--------------- -->
+        <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-12">
+                    <div class="login-card">
+                        <div >
+                            <div>
+                                <a class="logo" routerLink='/'>
+                                  <img class="img-fluid  for-light" src="assets/login.png" alt="looginpage">
+                                  <!-- <img class="img-fluid for-dark" src="assets/logo_dark.png" alt="looginpage"> -->
+                                </a>
+                              </div>
+                    
+                        <div class="login-main">
+                           <form class="theme-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                               <h4>Sign in to account</h4>
+                               <p  class="text-muted">Enter Your email & password to login</p>
+                               <div class="form-group"
+                               [ngClass]="{ 'form-invalid': !loginForm.get('email')?.valid && loginForm.get('email')?.['touched'] }">
+                               <label>Email Address:</label>
+                               <input  class="text-muted" type="text" required formControlName="email" class="form-control pl-2"
+                                   placeholder="test@gmail.com" name="email" />
+                               <span
+                                   *ngIf="!loginForm.get('email')?.valid && loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['required']"
+                                   class="text-danger" class="text-danger">
+                                   userName Name is required
+                               </span>
+                               <span
+                                   *ngIf="!loginForm.get('email')?.valid && loginForm.get('email')?.touched && loginForm.get('email')?.errors?.['userName']"
+                                   class="text-danger" class="text-danger">
+                                   Please enter a valid userName
+                               </span>
+                           </div>
+                           <!-- -------password----- -->
+                           <div class="form-group">
+                            <div>
+                                <div class="d-flex justify-content-space-between">
+                                    <label for="login-password">password:</label>
+                                    <div class="show-hide" (click)="showPassword()" *ngIf="!show"><span class="show"></span></div>
+                                    <div class="show-hide" (click)="showPassword()" *ngIf="show"><span class="Hide"></span></div>
+                                    <!-- <small>forgot password?</small> -->
+                                </div>
+                            </div>
+                            <input type="password" required formControlName="password" placeholder="......."
+                                class="form-control-merge form-control pl-2" name="password" />
+                            <span
+                                *ngIf="!loginForm.get('password')?.valid && loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['required']"
+                                class="text-danger" class="text-danger">
+                                password must be at least 6 character
+                            </span>
+                            <span
+                                *ngIf="!loginForm.get('password')?.valid && loginForm.get('password')?.touched && loginForm.get('password')?.errors?.['password']"
+                                class="text-danger" class="text-danger">
+                                password is required
+                            </span>
+                        </div>
+                           <br>
+                        <div class="form-group mb-0">
+                            <div class="checkbox p-0 ">
+                              <input id="checkbox1" type="checkbox">
+                              <label class="text-muted" for="checkbox1">Remember password</label>
+                              <a  class="link pl-5">Forgot password?</a>
+                            </div>
+                            <br>
+                            <button type="submit" class="btn btn-primary btn-login" [disabled]="!loginForm.valid">login</button>
+                            </div>
+                            <div class="divider">
+                                <div class="divider-text">
+                                    <h6 class="text-muted mt-4 or">Or Sign in with</h6>
+                                </div>
+                            </div>
+                          
+                            <!-- --------buttons------ -->
+                            <div class="social mt-4">
+                                <div class="btn-showcase">
+                                  <a class="btn btn-light m-2" >
+                                    <i class="fa-brands fa-facebook-f" aria-hidden="true"></i> Facebook
+                                  </a>
+                                  <a class="btn btn-light m-2">
+                                    <i class="fa-brands fa-twitter"></i>twitter
+                                  </a>
+                                  <a class="btn btn-light m-2">
+                                  Google +
+                                  </a>
+                                </div>
+                              </div>
+
+                              <p class="mt-4 mb-0">Don't have account?
+                                <a  class="ml-2">Create Account</a>
+                              </p>
+                           </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
