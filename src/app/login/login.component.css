@@ -20,8 +20,13 @@
           align-items: center;
         justify-content: center;
     }
-    .login-card {
+
+    .container-fluid{
         background: url("../../assets/login_bg.jpg");
+
+    }
+    .login-card {
+        /* background: url("../../assets/login_bg.jpg"); */
         min-height: 100vh;
         display: flex;
         align-items: center;
@@ -59,13 +64,12 @@
     margin-bottom: 30px;
     text-align: center;
   }
-  p{
-  /* font-family: 'Montserrat', sans-serif; */
-  /* color: #898989 */
-  /* font-size 14px; */
+  
+  /* font-family: 'Montserrat', sans-serif;  */
+  /* /* font-size 14px; */
   
 
-  }
+  
   .divider .divider-text{
     position: relative;
 }
